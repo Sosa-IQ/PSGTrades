@@ -1,9 +1,9 @@
-<form>
+<form (ngSubmit)="onSubmit(signInForm)" #signInForm="ngForm">
     <label for="email">Email</label>
-    <input for="email" type="text" id="email" name="email" required>
+    <input for="email" type="text" id="email" name="email" ngModel required>
     <label for="password">Password</label>
-    <input for="password" type="password" id="password" name="password" required>
-    <button mat-flat-button class="sign-in-button">
+    <input for="password" type="password" id="password" name="password" ngModel required>
+    <button mat-flat-button class="sign-in-button" type="submit">
         Sign In
     </button>
 </form>
