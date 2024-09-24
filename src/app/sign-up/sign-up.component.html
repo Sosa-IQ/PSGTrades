@@ -1,13 +1,13 @@
-<form>
+<form (ngSubmit)="onSubmit(signUpForm)" #signUpForm="ngForm">
     <label for="email">Email</label>
-    <input for="email" type="text" id="email" name="email" required>
+    <input for="email" type="text" id="email" name="email" ngModel required>
     <label for="password">Password</label>
-    <input for="password" type="password" id="password" name="password" required>
+    <input for="password" type="password" id="password" name="password" ngModel required>
     <label for="confirm-password">Confirm Password</label>
-    <input for="confirm-password" type="password" id="confirm-password" name="confirm-password" required>
+    <input for="confirm-password" type="password" id="confirm-password" name="confirm-password" ngModel required>
     <label for="key">Traider Key</label>
-    <input for="key" type="text" id="key" name="key" required>
-    <button mat-flat-button class="sign-up-button">
+    <input for="key" type="text" id="key" name="key" ngModel required>
+    <button mat-flat-button class="sign-up-button" type="submit">
         Sign Up
     </button>
 </form>
