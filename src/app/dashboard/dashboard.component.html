@@ -4,13 +4,13 @@
     </div>
     <div class="dashboard-container">
         <div class="form-container">
-          <form>
-            <input type="text" id="stock-symbol" name="stock-symbol" placeholder="Enter Symbol" required>
+          <form #orderForm="ngForm">
+            <input type="text" id="stock-symbol" name="stock-symbol" placeholder="Enter Symbol" ngModel required>
             <div class="button-container">
-              <button mat-flat-button class="buy-button">
+              <button class="buy-button" (click)="onBuy(orderForm)">
                 Buy
               </button>
-              <button class="sell-button">
+              <button class="sell-button" (click)="onSell(orderForm)">
                 Sell
               </button>
             </div>
