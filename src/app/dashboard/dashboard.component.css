@@ -15,7 +15,6 @@
   .form-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px; /* Space between form and buttons */
   }
   
   form {
@@ -40,6 +39,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px; /* Space between form and buttons */
   }
   
   button {

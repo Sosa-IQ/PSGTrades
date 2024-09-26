@@ -3,7 +3,8 @@
     border-radius: 8px; /* Rounded corners */
     padding: 16px; /* Padding inside the box */
     width: 200px; /* Fixed width */
-    background-color: #f9f9f9; /* Background color */
+    background-color: #000000; /* Background color */
+    color: white; /* Text color */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a 3D effect */
   }
   
@@ -16,7 +17,7 @@
   .account-list-box li {
     margin-bottom: 8px; /* Space between list items */
     font-size: 16px; /* Font size for list items */
-    color: #333; /* Text color */
+    color: #adadad; /* Text color */
   }
   
   .account-list-box li:last-child {
