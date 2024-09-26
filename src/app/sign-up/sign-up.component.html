@@ -1,4 +1,4 @@
-<form (ngSubmit)="onSubmit(signUpForm)" #signUpForm="ngForm">
+<!-- <form (ngSubmit)="onSubmit(signUpForm)" #signUpForm="ngForm">
     <label for="email">Email</label>
     <input for="email" type="text" id="email" name="email" ngModel required>
     <label for="password">Password</label>
@@ -11,4 +11,16 @@
         Sign Up
     </button>
 </form>
-<a routerLink="/signin">Already have an account? Sign in</a>
+<a routerLink="/signin">Already have an account? Sign in</a> -->
+<div class="login-container">
+    <amplify-authenticator [loginMechanisms]="['email']" [formFields]="formFields">
+        <!-- <ng-template
+            amplifySlot="authenticated"
+            let-user="user"
+            let-signOut="signOut"
+        >
+        <h1>Welcome {{ name }}!</h1>
+        <button (click)="signOut()">Sign Out</button>
+        </ng-template> -->
+    </amplify-authenticator>
+</div>

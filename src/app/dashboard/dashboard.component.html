@@ -1,4 +1,8 @@
-<div class="content-container">
+<ng-container *ngIf="authenticator.authStatus === 'configuring'">
+  Loading...
+</ng-container>
+<ng-container *ngIf="authenticator.route === 'authenticated'">
+  <div class="content-container">
     <div class="accounts-container">
       <app-accountlist></app-accountlist>
     </div>
@@ -18,3 +22,7 @@
         </div>
     </div>
   </div>
+</ng-container>
+<ng-container *ngIf="authenticator.authStatus !== 'authenticated'">
+  <app-sign-up></app-sign-up>
+</ng-container>
