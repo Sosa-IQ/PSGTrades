@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { AccountlistComponent } from '../accountlist/accountlist.component';
 import { FormsModule, NgForm } from '@angular/forms';
-import { SignUpComponent } from "../sign-up/sign-up.component";
+import { AuthComponent } from "../auth/auth.component";
 import { CommonModule } from '@angular/common';
 import { AuthenticatorService } from '@aws-amplify/ui-angular';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [AccountlistComponent, FormsModule, SignUpComponent, CommonModule],
+  imports: [AccountlistComponent, FormsModule, AuthComponent, CommonModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
