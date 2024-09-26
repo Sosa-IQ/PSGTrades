@@ -21,6 +21,9 @@
           </form>
         </div>
     </div>
+    <div class="sign-out">
+      <button class="sign-out-button" (click)="authenticator.signOut()">Sign Out</button>
+    </div>
   </div>
 </ng-container>
 <ng-container *ngIf="authenticator.authStatus !== 'authenticated'">
