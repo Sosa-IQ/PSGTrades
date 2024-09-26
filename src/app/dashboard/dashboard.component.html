@@ -1,4 +1,8 @@
-<div class="content-container">
+<ng-container *ngIf="authenticator.authStatus === 'configuring'">
+  Loading...
+</ng-container>
+<ng-container *ngIf="authenticator.route === 'authenticated'">
+  <div class="content-container">
     <div class="accounts-container">
       <app-accountlist></app-accountlist>
     </div>
@@ -17,4 +21,11 @@
           </form>
         </div>
     </div>
+    <div class="sign-out">
+      <button class="sign-out-button" (click)="authenticator.signOut()">Sign Out</button>
+    </div>
   </div>
+</ng-container>
+<ng-container *ngIf="authenticator.authStatus !== 'authenticated'">
+  <app-auth></app-auth>
+</ng-container>
