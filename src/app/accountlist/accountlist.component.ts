@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { AuthService } from '../services/AuthService';
 
 @Component({
   selector: 'app-accountlist',
@@ -10,22 +11,29 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   styleUrl: './accountlist.component.css'
 })
 export class AccountlistComponent implements OnInit {
-  accounts: string[] = [];
-  data: any[] = [];
+  accounts: any[] = [];
+  token: string | undefined;
 
   httpClient = inject(HttpClient);
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    let token = await this.authService.getUserToken();
+    this.token = token?.toString();
     this.fetchAccounts();
   }
+  constructor(private authService: AuthService) {}
 
   fetchAccounts() {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.token}`,
+      'Accept': 'application/json'
+    });
     this.httpClient
-      .get('https://25ikecna96.execute-api.us-east-1.amazonaws.com/Test/accounts')
+      .get('https://api.tradier.com/v1/user/profile', { headers })
       .subscribe((data: any) => {
         console.log(data);
-        this.data = data;
-        this.accounts = data['accounts'];
+        console.log(data['profile']['account']);
+        this.accounts = data['profile']['account'];
       });
   }
 }
