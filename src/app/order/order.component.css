@@ -1,0 +1,51 @@
+  .form-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  form label {
+    margin: 5px 0;
+  }
+  
+  form input {
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Space between form and buttons */
+  }
+  
+  button {
+    font-size: 1.5em; /* Large size */
+    border-radius: 25px; /* Rounded corners */
+    padding: 10px 20px;
+    margin: 0 10px; /* Space between buttons */
+    transition: opacity 1ms ease;
+  }
+
+  button:active {
+    opacity: 0.5; /* Change opacity when button is pressed */
+  }
+  
+  .buy-button {
+    background-color: blue;
+    color: white;
+  }
+  
+  .sell-button {
+    background-color: green;
+    color: white;
+  }
