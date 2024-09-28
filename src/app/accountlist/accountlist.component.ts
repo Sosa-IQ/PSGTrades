@@ -28,7 +28,15 @@ export class AccountlistComponent implements OnInit {
   loadAccounts() {
     this.tradier.getAccounts(this.token)
     .subscribe((data: any) => {
-      this.accounts = data['profile']['account'];
+      if (data && data.profile && data.profile.account) {
+        this.accounts = data['profile']['account']
+        // sort by creation date
+        this.accounts.sort((a, b) => {
+          return new Date(a.date_created).getTime() - new Date(b.date_created).getTime();
+        });
+      } else {
+        console.error("Error fetching accounts")
+      }
     })
   }
 }
