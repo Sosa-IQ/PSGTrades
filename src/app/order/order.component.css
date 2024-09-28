@@ -49,3 +49,21 @@
     background-color: green;
     color: white;
   }
+
+  .order-statuses {
+    margin-top: 20px;
+  }
+  
+  .order-statuses .success {
+    color: green;
+  }
+  
+  .order-statuses .failure {
+    color: red;
+  }
+
+  .scrollable-list {
+    max-height: 300px; /* Fixed height for the scrollable area */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin-top: 10px; /* Space between the total accounts and the list */
+  }

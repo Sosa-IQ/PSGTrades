@@ -10,4 +10,12 @@
         </button>
         </div>
     </form>
+    <div *ngIf="orderStatuses.length > 0" class="order-statuses">
+        <div class="scrollable-list">
+            <div *ngFor="let status of orderStatuses" [ngClass]="{'success': status.success, 'failure': !status.success}">
+                {{ status.message }}
+            </div>
+        </div>
+
+    </div>
 </div>
