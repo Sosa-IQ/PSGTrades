@@ -1,0 +1,10 @@
+{
+    "/api": {
+      "target": "https://api.tradier.com",
+      "secure": true,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": "/v1"
+      }
+    }
+  }

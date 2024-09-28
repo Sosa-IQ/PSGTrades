@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 
-const BASE_URL = 'https://api.tradier.com/v1/user/profile'
+const BASE_URL = '/api/user/profile'
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +32,7 @@ export class TradierService {
       'duration': 'day'
     }
     return this.http.post(
-      `https://api.tradier.com/v1/accounts/${account_id}/orders`,
+      `/api/accounts/${account_id}/orders`,
       body,
       { headers }
     );
