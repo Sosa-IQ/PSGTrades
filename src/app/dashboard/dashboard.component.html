@@ -7,19 +7,7 @@
       <app-accountlist></app-accountlist>
     </div>
     <div class="dashboard-container">
-        <div class="form-container">
-          <form #orderForm="ngForm">
-            <input type="text" id="stock-symbol" name="stock-symbol" placeholder="Enter Symbol" ngModel required>
-            <div class="button-container">
-              <button class="buy-button" (click)="onBuy(orderForm)">
-                Buy
-              </button>
-              <button class="sell-button" (click)="onSell(orderForm)">
-                Sell
-              </button>
-            </div>
-          </form>
-        </div>
+      <app-order></app-order>
     </div>
     <div class="sign-out">
       <button class="sign-out-button" (click)="authenticator.signOut()">Sign Out</button>
