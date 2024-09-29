@@ -1,4 +1,9 @@
 <div class="form-container">
+    <div class="warning-box">
+        <i class="fas fa-exclamation-triangle"></i>
+            Orders are placed on all accounts.
+            Sell orders will reject accounts without the stock.
+    </div>
     <form #orderForm="ngForm">
         <input type="text" id="stock-symbol" name="stock-symbol" placeholder="Enter Symbol" ngModel required>
         <div class="button-container">

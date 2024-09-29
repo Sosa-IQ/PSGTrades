@@ -4,6 +4,11 @@
 <ng-container *ngIf="authenticator.authStatus === 'authenticated'">
   <div class="content-container">
     <div class="accounts-container">
+      <div class="warning-box">
+        <i class="fas fa-exclamation-triangle"></i>
+        Accounts are ordered by date of creation (oldest to newest).
+        However, this order may differ from the tradier website.
+      </div>
       <app-accountlist></app-accountlist>
     </div>
     <div class="dashboard-container">

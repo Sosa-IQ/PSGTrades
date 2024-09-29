@@ -1,7 +1,8 @@
   .form-container {
     display: flex;
-    justify-content: center;
-    align-items: end;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
     height: 60vh;
   }
   
@@ -80,4 +81,19 @@
     align-items: end;
     justify-content: end;
     height: 40vh;
+  }
+
+  .warning-box {
+    display: flex;
+    align-items: center;
+    background-color: orangered;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 300px;
+  }
+  
+  .warning-box i {
+    margin-right: 10px;
   }
