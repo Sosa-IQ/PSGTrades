@@ -1,6 +1,8 @@
   .form-container {
     display: flex;
     justify-content: center;
+    align-items: end;
+    height: 60vh;
   }
   
   form {
@@ -51,7 +53,13 @@
   }
 
   .order-statuses {
-    margin-top: 20px;
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    padding: 16px; /* Padding inside the box */
+    width: 40dvw; /* Fixed width */
+    background-color: #000000; /* Background color */
+    color: white; /* Text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a 3D effect */
   }
   
   .order-statuses .success {
@@ -63,7 +71,13 @@
   }
 
   .scrollable-list {
-    max-height: 300px; /* Fixed height for the scrollable area */
+    max-height: 30dvh; /* Fixed height for the scrollable area */
     overflow-y: auto; /* Enable vertical scrolling */
-    margin-top: 10px; /* Space between the total accounts and the list */
+  }
+
+  .page-container {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    height: 40vh;
   }

@@ -24,11 +24,6 @@ export class OrderComponent implements OnInit{
     let token = await this.authService.getUserToken();
     this.token = token?.toString();
     this.loadAccounts();
-    // this.orderStatuses.push({
-    //   account_id: 'test',
-    //   message: 'message',
-    //   success: true
-    // });
   }
 
   onBuy(orderForm: NgForm) {
