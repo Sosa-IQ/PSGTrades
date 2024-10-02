@@ -1,34 +1,18 @@
 import { Component } from '@angular/core';
 import { AccountlistComponent } from '../accountlist/accountlist.component';
-import { FormsModule, NgForm } from '@angular/forms';
 import { AuthComponent } from "../auth/auth.component";
 import { CommonModule } from '@angular/common';
 import { AuthenticatorService } from '@aws-amplify/ui-angular';
+import { OrderComponent } from "../order/order.component";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [AccountlistComponent, FormsModule, AuthComponent, CommonModule],
+  imports: [AccountlistComponent, AuthComponent, CommonModule, OrderComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
   constructor(public authenticator: AuthenticatorService) {
-  }
-  
-  onBuy(orderForm: NgForm) {
-    console.log('Buy Button clicked');
-    if (orderForm.valid) {
-      console.log("Buying", orderForm.value);
-      orderForm.resetForm();
-    }
-  }
-
-  onSell(orderForm: NgForm) {
-    console.log('Sell Button clicked');
-    if (orderForm.valid) {
-      console.log("Selling", orderForm.value);
-      orderForm.resetForm();
-    }
   }
 }

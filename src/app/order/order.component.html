@@ -1,0 +1,31 @@
+<div class="form-container">
+    <div class="warning-box">
+        <i class="fas fa-exclamation-triangle"></i>
+            Orders are placed on all accounts.
+            Sell orders will reject accounts without the stock.
+    </div>
+    <form #orderForm="ngForm">
+        <input type="text" id="stock-symbol" name="stock-symbol" placeholder="Enter Symbol" ngModel required>
+        <div class="button-container">
+        <button class="buy-button" (click)="onBuy(orderForm)">
+            Buy
+        </button>
+        <button class="sell-button" (click)="onSell(orderForm)">
+            Sell
+        </button>
+        </div>
+    </form>
+</div>
+<div class="page-container">
+    <div *ngIf="orderStatuses.length > 0" class="order-statuses">
+        <div class="scrollable-list">
+            <ol>
+                <li *ngFor="let status of orderStatuses" [ngClass]="{'success': status.success, 'failure': !status.success}">
+                    {{ status.message }}
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+

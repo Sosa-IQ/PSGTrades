@@ -2,7 +2,7 @@
     <p>Total Accounts: {{ accounts.length }}</p>
     <div class="scrollable-list">
         <ul>
-            <li *ngFor="let account of accounts; let i = index">Account {{ i + 1 }}: {{ account }}</li>
+            <li *ngFor="let account of accounts; let i = index">Account {{ i + 1 }}: {{ account.account_number }}</li>
         </ul>
     </div>
 </div>
