@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
+import { lastValueFrom } from 'rxjs';
 
 const BASE_URL = 'https://api.tradier.com/v1/user/profile'
 
@@ -25,9 +26,9 @@ export class TradierService {
       'symbol': symbol,
       'side': side
     }
-    return this.http.post(
+    return lastValueFrom(this.http.post(
       `https://wzbaegm1o9.execute-api.us-east-1.amazonaws.com/testing/order`,
       body
-    );
+    ));
   }
 }
