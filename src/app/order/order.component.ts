@@ -69,13 +69,13 @@ export class OrderComponent implements OnInit{
     })
   }
 
-  createOrder(symbol: string | undefined, side: string | undefined){
+  async createOrder(symbol: string | undefined, side: string | undefined){
     this.orderStatuses = []; // Reset order statuses
     for (let account of this.accounts) {
       let account_id = account.account_number;
-      this.tradier.postOrder(this.username, symbol, side, account_id)
-      .subscribe((response: any) => {
-        if (response && response.statusCode && response.statusCode == 200) {
+      try {
+        const response: any = await this.tradier.postOrder(this.username, symbol, side, account_id);
+        if (response && response.statusCode === 200) {
           console.log(`${side?.toUpperCase()} order placed successfully for account ${account_id}`);
           this.orderStatuses.push({
             account_id,
@@ -90,8 +90,7 @@ export class OrderComponent implements OnInit{
             success: false
           });
         }
-      },
-      (error: any) => {
+      } catch (error: any) {
         console.error(`Error placing ${side?.toUpperCase()} order for account ${account_id}:`, error);
         this.orderStatuses.push({
           account_id,
@@ -99,7 +98,6 @@ export class OrderComponent implements OnInit{
           success: false
         })
       }
-    );
     }
   }
 }
