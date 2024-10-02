@@ -18,23 +18,16 @@ export class TradierService {
     return this.http.get(BASE_URL, { headers })
   }
 
-  postOrder(token: string | undefined, symbol: string | undefined, side: string | undefined, account_id: string | undefined){
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${token}`,
-      'Accept': 'application/json'
-    });
+  postOrder(username: string | undefined, symbol: string | undefined, side: string | undefined, account_id: string | undefined){
     const body = {
-      'class': 'equity',
-      'symbol': `${symbol}`,
-      'side': `${side}`,
-      'quantity': '1',
-      'type': 'market',
-      'duration': 'day'
+      'username': username,
+      'account_id': account_id,
+      'symbol': symbol,
+      'side': side
     }
     return this.http.post(
-      `/api/accounts/${account_id}/orders`,
-      body,
-      { headers }
+      `https://wzbaegm1o9.execute-api.us-east-1.amazonaws.com/testing/order`,
+      body
     );
   }
 }

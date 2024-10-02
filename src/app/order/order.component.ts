@@ -17,12 +17,15 @@ export class OrderComponent implements OnInit{
   private tradier = inject(TradierService);
   
   token: string | undefined;
+  username: string | undefined;
   accounts: any[] = [];
   orderStatuses: { account_id: string, message: string, success: boolean}[] = [];
 
   async ngOnInit() {
     let token = await this.authService.getUserToken();
+    let user = await this.authService.getCurrentUser();
     this.token = token?.toString();
+    this.username = user.username;
     this.loadAccounts();
   }
 
@@ -70,20 +73,20 @@ export class OrderComponent implements OnInit{
     this.orderStatuses = []; // Reset order statuses
     for (let account of this.accounts) {
       let account_id = account.account_number;
-      this.tradier.postOrder(this.token, symbol, side, account_id)
+      this.tradier.postOrder(this.username, symbol, side, account_id)
       .subscribe((response: any) => {
-        if (response && response.order && response.order.status === 'ok') {
+        if (response && response.statusCode && response.statusCode == 200) {
           console.log(`${side?.toUpperCase()} order placed successfully for account ${account_id}`);
           this.orderStatuses.push({
             account_id,
-            message: `${account_id}: ${side?.toUpperCase()} order successful`,
+            message: response.message.toString(),
             success: true
           });
         } else {
           console.error(`${side?.toUpperCase()} order failed for account ${account_id}:`, response);
           this.orderStatuses.push({
             account_id,
-            message: `${account_id}: ${side?.toUpperCase} order failed`,
+            message: response.message.toString(),
             success: false
           });
         }
