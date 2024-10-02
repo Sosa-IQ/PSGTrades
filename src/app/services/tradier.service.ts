@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 
-const BASE_URL = '/api/user/profile'
+const BASE_URL = 'https://api.tradier.com/v1/user/profile'
 
 @Injectable({
   providedIn: 'root'
