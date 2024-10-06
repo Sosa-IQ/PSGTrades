@@ -1,4 +1,4 @@
-.account-list-box {
+  .account-list-box {
     border: 1px solid #ccc; /* Border color */
     border-radius: 8px; /* Rounded corners */
     padding: 16px; /* Padding inside the box */
@@ -6,6 +6,16 @@
     background-color: #000000; /* Background color */
     color: white; /* Text color */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a 3D effect */
+  }
+
+  @media (max-width: 600px) {
+    .account-list-box {
+      width: 30vh; /* Full width on small screens */;
+    }
+
+    .scrollable-list {
+      height: 23vh; /* Fixed height for the scrollable area */
+    }
   }
   
   .account-list-box ul {
