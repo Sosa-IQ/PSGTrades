@@ -97,3 +97,26 @@
   .warning-box i {
     margin-right: 10px;
   }
+
+  @media (max-width: 600px) {
+    .form-container {
+      height: fit-content;
+      margin-top: 4px;
+    }
+
+    .page-container {
+      height: fit-content;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-top: 4px;
+    }
+
+    .order-statuses {
+      width: 100%;
+    }
+
+    .scrollable-list {
+      height: 17vh;
+    }
+  }
